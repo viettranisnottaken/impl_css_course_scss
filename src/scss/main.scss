@@ -1,0 +1,30 @@
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/helpers';
+@import 'utils/mixins';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/footer';
+
+@import 'pages/home';
+@import 'pages/about';
+
+body {
+  margin: 0;
+  background-color: #cdcdcd;
+}
+
+.container {
+  background: url('~images/cat.jpg') center center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+
+  .content {
+    background: red;
+  }
+}
