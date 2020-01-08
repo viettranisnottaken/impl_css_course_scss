@@ -8,6 +8,7 @@ var TerserJSPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   resolve: {
+    modules: ['node_modules'],
     alias: {
       images: path.join(__dirname, 'src/images'),
       fonts: path.join(__dirname, 'src/fonts')
