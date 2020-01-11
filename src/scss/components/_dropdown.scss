@@ -1,0 +1,35 @@
+.dropdown-toggle {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  background-color: #ffffff;
+  position: absolute;
+  margin: 0;
+  top: 100%;
+  left: 0;
+  width: 150px;
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 15px;
+  color: #000000;
+}
+
+.dropdown-toggle:hover {
+  .dropdown {
+    display: block;
+  }
+}
+
+.dropdown-item:hover {
+  background-color: $primary-color;
+}
+
+.dropdown-link:hover {
+  color: #ffffff;
+}
