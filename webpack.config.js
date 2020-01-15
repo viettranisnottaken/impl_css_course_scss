@@ -1,48 +1,45 @@
-var path = require('path');
+var path = require("path");
 
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
-var MiniCssExtractPlugin = require('mini-css-extract-plugin');
-var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-var TerserJSPlugin = require('terser-webpack-plugin');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+var CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin;
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+var TerserJSPlugin = require("terser-webpack-plugin");
 
 module.exports = {
+  devServer: {
+    writeToDisk: true
+  },
   resolve: {
-    modules: ['node_modules'],
+    modules: ["node_modules"],
     alias: {
-      images: path.join(__dirname, 'src/images'),
-      fonts: path.join(__dirname, 'src/fonts')
+      images: path.join(__dirname, "src/images"),
+      fonts: path.join(__dirname, "src/fonts")
     }
   },
   optimization: {
-    minimizer: [
-      new TerserJSPlugin({}),
-      new OptimizeCSSAssetsPlugin({})
-    ],
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
   },
-  entry: [
-    './src/js/index.js',
-    './src/scss/main.scss'
-  ],
+  entry: ["./src/js/index.js", "./src/scss/main.scss"],
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Index',
-      filename: 'index.html',
-      template: 'src/templates/index.html'
+      title: "Index",
+      filename: "index.html",
+      template: "src/templates/index.html"
     }),
     new HtmlWebpackPlugin({
-      title: 'Home Page',
-      filename: 'home_page.html',
-      template: 'src/templates/home_page.html'
+      title: "Home Page",
+      filename: "home_page.html",
+      template: "src/templates/home_page.html"
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.min.css'
+      filename: "styles.min.css"
     })
   ],
   output: {
-    filename: 'main.min.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "main.min.js",
+    path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [
@@ -50,18 +47,19 @@ module.exports = {
         test: /\.(sa|sc)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-          'postcss-loader'
+          "css-loader",
+          "postcss-loader",
+          "sass-loader"
         ]
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-                outputPath: 'images'
+              outputPath: "images",
+              esModule: false
             }
           }
         ]
@@ -72,17 +70,23 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              outputPath: 'fonts'
+              outputPath: "fonts"
             }
           }
         ]
+      },
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: "html-loader"
+        }
       }
     ]
   },
   optimization: {
     splitChunks: {
-      chunks: 'all'
+      chunks: "all"
     }
   },
-  devtool: 'inline-source-map'
+  devtool: "inline-source-map"
 };
