@@ -4,6 +4,7 @@
   background-color: $primary-color;
   justify-content: center;
   text-align: center;
+  border-bottom: 3px solid transparent;
 
   &:hover {
     border-bottom: 3px solid #f7cf62;

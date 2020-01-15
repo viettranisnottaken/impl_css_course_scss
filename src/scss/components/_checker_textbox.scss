@@ -1,0 +1,15 @@
+.checker-textbox {
+  color: black;
+  float: right;
+  width: 50%;
+
+  .item {
+    // width: 49%;
+    width: 39%;
+    display: inline-block;
+    margin-right: 10%;
+    // padding-right: 10%;
+    vertical-align: top;
+    // box-sizing: border-box;
+  }
+}

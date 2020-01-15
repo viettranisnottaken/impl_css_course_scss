@@ -1,0 +1,10 @@
+.phonebox {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 50%;
+
+  .phone-img {
+    float: right;
+    margin-right: 20%;
+  }
+}
