@@ -1,0 +1,10 @@
+@mixin spin($completion_time) {
+  animation: spin $completion_time linear infinite;
+
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+}
