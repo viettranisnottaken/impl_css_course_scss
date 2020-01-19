@@ -1,0 +1,42 @@
+.succeed {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  background-color: $primary-color;
+  // width: 100%; not necessary
+  min-height: 40vh;
+
+  &__text {
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: 10%;
+    color: #ffffff;
+    z-index: 1;
+
+    &__margin-mini {
+      margin: 2%;
+    }
+
+    &__font-size-huge {
+      font-size: 100px;
+    }
+
+    &__margin-mini:last-of-type {
+      margin-bottom: 10%;
+    }
+  }
+  &::after {
+    content: "";
+    bottom: 0;
+    position: absolute;
+    z-index: 0;
+    border-top: 40vh solid #00cdcd;
+    border-right: 100vw solid #ffffff;
+    right: 0;
+  }
+
+  &__phone {
+    z-index: 1;
+  }
+}

@@ -1,5 +1,38 @@
-.btn-primary {
-  background-color: #02b4b4;
-  color: #ffffff;
-  border: none;
+.btn {
+  background-color: #ffffff;
+  padding: 20px 50px;
+  font-size: 14px;
+
+  &--rounded-corner {
+    border-radius: 30px;
+  }
+
+  &--primary {
+    background-color: #ffffff;
+    color: #00cdcd;
+    border: none;
+
+    &:hover {
+      background-color: #f2ce5f;
+      color: #ffffff;
+      transition: 0.3s;
+    }
+
+    &:active {
+      background-color: #0056b3;
+      color: #ffffff;
+      transition: 0.3s;
+    }
+  }
+
+  &--primary--reverse {
+    background-color: #00cdcd;
+    color: #ffffff;
+    border: none;
+  }
+
+  &--small {
+    font-size: 10px;
+    padding: 10px;
+  }
 }
